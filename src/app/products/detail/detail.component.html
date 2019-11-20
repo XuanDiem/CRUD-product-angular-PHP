@@ -1,0 +1,26 @@
+<div>
+  <p class="page-title">PRODUCT DETAIL</p>
+  <table class="table" border="3" bgcolor="aqua">
+    <div class="row product-detail">
+      <div class="col-sx-6 col-sm-6 col-md-12 col-lg-12 dress-spread-background">
+        <div class="product">
+          <br>
+          <a routerLink="/detail/{{detailProduct.id}}">
+            <img class="image-product" src="{{detailProduct.image}}" alt="">
+          </a>
+          <div class="product-content product-margin-padding">
+            <h5 class="title">
+              <b><a class="container" routerLink="/detail/{{detailProduct.id}}">{{detailProduct.name}}</a></b>
+            </h5>
+            <div class="price">
+              <span class="container">{{detailProduct.price}} <b class="money">VNĐ</b></span>
+            </div>
+            <div class="add-to-cart ">
+              <a routerLink="/detail/{{detailProduct.id}}" class="btn btn-danger">+ Add To Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </table>
+</div>

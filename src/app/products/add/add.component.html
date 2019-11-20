@@ -1,0 +1,59 @@
+<div>
+  <p class="page-title">ADD PRODUCT</p>
+  <table class="table" border="3" bgcolor="aqua">
+    <div class="container margin-form-add-product">
+      <div class="row">
+        <div class="col-lg-12">
+          <form [formGroup]="addProductForm" (ngSubmit)="submit()">
+            <div class="form-group">
+              <label>Mã sản phẩm</label>
+              <input id="id" class="form-control"
+                     formControlName="id" required>
+              <div *ngIf="id.invalid && (id.dirty || id.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="id.errors.required">
+                  Mã sản phẩm không được để trống !
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Tên</label>
+              <input id="number" class="form-control"
+                     formControlName="name" required>
+              <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="name.errors.required">
+                  Tên sản phẩm không được để trống !
+                </div>
+                <div *ngIf="name.errors.minlength">
+                  Tên sản phẩm không được dưới 4 ký tự !
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Ảnh</label>
+              <input type="file" class="form-control" formControlName="image">
+              <div *ngIf="image.invalid && (image.dirty || image.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="image.errors.required">
+                  Ảnh sản phẩm không được để trống !
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Giá</label>
+              <input type="text" class="form-control" formControlName="price">
+              <div *ngIf="price.invalid && (price.dirty || price.touched)"
+                   class="alert alert-danger">
+                <div *ngIf="price.errors.required">
+                  Giá sản phẩm không được để trống !
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!addProductForm.valid">Thêm Vào Danh Sách</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </table>
+</div>
